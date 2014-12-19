@@ -1,30 +1,36 @@
-    #board {
-      max-width: 740px;
+    .board {
+      max-width: 780px;
       width:100%;
       margin:0 auto;
       background-color:yellow;
+      border: 1px solid #000;
     }
     #column {
       display: inline-block;
       width: 100px;
       height: 600px;
       background-color: yellow;
-      border: 1px solid #000;
+      /*border: 1px solid #000;*/
+      margin:0 3.6px;
     }
     .empty {
       height: 90px;
       width: 100%;
       background-color:#fff;
-      border: 1px solid #000;
+      border: 2px dotted #000;
       border-radius: 100%;
+
+      /*padding: 5px;*/
+      margin-top: 5px;
     }
 
     .red {
         height: 90px;
         width: 100%;
         background-color: red;
-        border: 1px solid #000;
+        border: 2px solid #000;
         border-radius: 100%;
+        margin-top: 5px;
     }
     .black {
         height: 90px;
@@ -32,6 +38,7 @@
         background-color: #000;
         border: 1px solid #000;
         border-radius: 100%;
+        margin-top: 5px;
     }
     button {
       height: 30px;
@@ -44,4 +51,8 @@
       height:90px;
       width:20px;
       background-color:blue;
+    }
+    .win{
+      background-image: url("http://24.media.tumblr.com/tumblr_ljgxm89DnS1qdmv0so1_500.gif");
+      z-index: -1;
     }
