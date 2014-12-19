@@ -52,7 +52,27 @@
       width:20px;
       background-color:blue;
     }
-    .win{
-      background-image: url("http://24.media.tumblr.com/tumblr_ljgxm89DnS1qdmv0so1_500.gif");
-      z-index: -1;
+    .win {
+      /*background-image: url("http://24.media.tumblr.com/tumblr_ljgxm89DnS1qdmv0so1_500.gif");*/
+      /*z-index: -1;*/
+      height:auto;
+      width: 490px;
+      position: absolute;
+      top:10%;
+      margin: 0 14.3%;
+      background-color: #fff;
+      border: 10px solid blue;
+      display:none;
+    }
+    .win img {
+      width: 100%;
+    }
+    .win-text {
+      text-align: center;
+      text-transform: capitalize;
+    }
+    .win button {
+      background-color: green;
+      color: #fff;
+      margin-left:41%;
     }
