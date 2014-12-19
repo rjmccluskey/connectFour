@@ -1,4 +1,7 @@
   $(document).ready(function() {
+    var url = "https://connectfourdbc.firebaseio.com";
+    var firebaseRef = new Firebase(url);
+
     var game = new Board()
     var currentColor = "black"
 
@@ -18,6 +21,11 @@
 
       var columnId = $(this).parent().index();
       console.log(columnId);
+      $(function fire()
+      firebaseRef.set({
+        color: currentColor,
+        column: columnId
+      })
       var gameState = game.drop(columnId,currentColor) //Give to the Model guys.
       console.log(gameState)
 
