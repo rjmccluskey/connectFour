@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 .board {
   max-width: 780px;
   width:100%;
@@ -24,6 +25,39 @@
   margin-top: 5px;
 }
 
+=======
+body {
+  background-image: url('http://images5.alphacoders.com/312/312646.jpg');
+  background-size: cover;
+}
+
+.board {
+  max-width: 780px;
+  width:100%;
+  margin:0 auto;
+  background-color:yellow;
+  border: 3px solid black;
+}
+#column {
+  display: inline-block;
+  width: 100px;
+  height: 600px;
+  background-color: yellow;
+  /*border: 1px solid #000;*/
+  margin:0 3.6px;
+}
+.empty {
+  height: 90px;
+  width: 100%;
+  background-color:#fff;
+  border: 2px dotted #000;
+  border-radius: 100%;
+
+  /*padding: 5px;*/
+  margin-top: 5px;
+}
+
+>>>>>>> Stashed changes
 .red {
     height: 90px;
     width: 100%;
