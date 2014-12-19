@@ -52,4 +52,3 @@
       location.reload();
     })
   })
-
