@@ -15,12 +15,14 @@
     //if red, then nextPlayer = black
 
     $("button").click(function() {
+
       var columnId = $(this).parent().index();
       console.log(columnId);
       //boardDrop(columnId,currentColor) //Give to the Model guys.
       $(this).parent().children(".empty").last().addClass(currentColor).removeClass("empty");
       currentColor = nextColor(currentColor)
       console.log(currentColor)
+      $("#board").effect( "shake" );
 
     })
   })
