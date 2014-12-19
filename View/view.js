@@ -32,7 +32,7 @@
         }
         currentColor = nextColor(currentColor)
         // console.log(currentColor)
-        $(".board").effect( "shake" );
+        // $(".board").effect( "shake" );
       }
       else { console.log("Column is Full!") }
     })
