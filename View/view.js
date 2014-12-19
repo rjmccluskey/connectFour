@@ -29,11 +29,25 @@
 
         if (gameState === true) {
           console.log("WINNERRRRERERERERER " + currentColor)
+          $(".win").css("display", "block");
+          $(".win-text").html(currentColor + " " + "WINS!!!!!!")
+          $(".board").effect( "shake" );
         }
+
+        // if (gameState === "draw") {
+        //   $(".win").css("display", "block");
+        //   $(".win img").html("http://i.imgur.com/z8kU5bB.jpg")
+        //   $(".win-text").html(currentColor + " " + "WINS!!!!!!")
+        //   $(".board").effect( "shake" );
+        // }
+
         currentColor = nextColor(currentColor)
         // console.log(currentColor)
-        $(".board").effect( "shake" );
       }
       else { console.log("Column is Full!") }
     })
+    $(".win button").click(function() {
+      location.reload();
+    })
   })
+
