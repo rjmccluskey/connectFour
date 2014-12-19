@@ -21,11 +21,12 @@
 
       var columnId = $(this).parent().index();
       console.log(columnId);
-      $(function fire()
-      firebaseRef.set({
-        color: currentColor,
-        column: columnId
-      })
+      $(function () {
+        firebaseRef.set({
+          color: currentColor,
+          column: columnId
+        });
+      });
       var gameState = game.drop(columnId,currentColor) //Give to the Model guys.
       console.log(gameState)
 
