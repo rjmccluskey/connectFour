@@ -16,6 +16,7 @@ Board.prototype = {
         return this.checkWin({row: i, column: columnNum, color: color})
       }
     }
+
   },
 
   checkWin: function(chipData) {
