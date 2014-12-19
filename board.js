@@ -13,9 +13,23 @@ Board.prototype = {
     for(var i = 5; i >= 0; i--) {
       if(this.board[i][columnNum] === '') {
         this.board[i][columnNum] = color
-        return this.checkWin({row: i, column: columnNum, color: color})
+        if (this.checkDraw()) {
+          return 'draw'
+        }
+        else {
+          return this.checkWin({row: i, column: columnNum, color: color})
+        }
       }
     }
+
+  },
+
+  checkDraw: function() {
+    var flatBoard = [].concat.apply([],this.board)
+    if ($.inArray('', flatBoard) === -1) {
+      return true
+    }
+    else { return false }
   },
 
   checkWin: function(chipData) {
@@ -32,7 +46,7 @@ Board.prototype = {
         if(this.board[row][column] != chipData.color) {
           break
         }
-        i ++
+        else { i ++ }
       }
     }
 
@@ -42,10 +56,10 @@ Board.prototype = {
         if(this.board[row][column] != chipData.color) {
           break
         }
-        i ++
+        else { i ++ }
       }
     }
-    if (i === 4) {
+    if (i >= 4) {
       return true
     }
     return false
@@ -60,10 +74,10 @@ Board.prototype = {
         if(this.board[row][column] != chipData.color) {
           break
         }
-        i ++
+        else { i ++ }
       }
     }
-    if (i === 4) {
+    if (i >= 4) {
       return true
     }
     return false
@@ -79,17 +93,17 @@ Board.prototype = {
         if(this.board[row][column] != chipData.color) {
           break
         }
-        i ++
+        else { i ++ }
       }
     }
     for (var counter = 1; counter < 4; counter++) {
       var row = chipData.row + counter
       var column = chipData.column - counter
       if (row < 6 && row >= 0 && column < 7 && column >= 0) {
-        if(this.board[row][counter] != chipData.color) {
+        if(this.board[row][column] != chipData.color) {
           break
         }
-        i ++
+        else { i ++ }
       }
     }
     for (var counter = 1; counter < 4; counter++) {
@@ -99,20 +113,20 @@ Board.prototype = {
         if(this.board[row][column] != chipData.color) {
           break
         }
-        j ++
+        else { j ++ }
       }
     }
     for (var counter = 1; counter < 4; counter++) {
-      var row = chipData.row + counter
+      var row = chipData.row - counter
       var column = chipData.column - counter
       if (row < 6 && row >= 0 && column < 7 && column >= 0) {
         if(this.board[row][column] != chipData.color) {
           break
         }
-        j ++
+        else { j ++ }
       }
     }
-    if (i === 4 || j === 4) {
+    if (i >= 4 || j >= 4) {
       return true
     }
     return false

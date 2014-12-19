@@ -43,6 +43,7 @@
 
         currentColor = nextColor(currentColor)
         // console.log(currentColor)
+
       }
       else { console.log("Column is Full!") }
     })
