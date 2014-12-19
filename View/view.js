@@ -19,6 +19,7 @@
       var columnId = $(this).parent().index();
       console.log(columnId);
       var gameState = game.drop(columnId,currentColor) //Give to the Model guys.
+      console.log(gameState)
 
       $availableSlots = $(this).parent().children(".empty").length
       if ($availableSlots > 0){
@@ -34,12 +35,12 @@
           $(".board").effect( "shake" );
         }
 
-        // if (gameState === "draw") {
-        //   $(".win").css("display", "block");
-        //   $(".win img").html("http://i.imgur.com/z8kU5bB.jpg")
-        //   $(".win-text").html(currentColor + " " + "WINS!!!!!!")
-        //   $(".board").effect( "shake" );
-        // }
+        if (gameState === "draw") {
+          $(".win").css("display", "block");
+          $(".win img").attr("src", "http://i.imgur.com/z8kU5bB.jpg")
+          $(".win-text").html("DRAW!!!")
+          $(".board").effect( "shake" );
+        }
 
         currentColor = nextColor(currentColor)
         // console.log(currentColor)
