@@ -14,10 +14,9 @@ Board.prototype = {
       if(this.board[i][columnNum] === '') {
         this.board[i][columnNum] = color
         if (this.checkDraw()) {
-          console.log('draw')
+          return 'draw'
         }
         else {
-          console.log('not draw')
           return this.checkWin({row: i, column: columnNum, color: color})
         }
       }
@@ -34,9 +33,6 @@ Board.prototype = {
   },
 
   checkWin: function(chipData) {
-    console.log(this.checkRow(chipData))
-    console.log(this.checkColumn(chipData))
-    console.log(this.checkDiagonal(chipData))
     return this.checkRow(chipData) || this.checkColumn(chipData) || this.checkDiagonal(chipData);
   },
 
