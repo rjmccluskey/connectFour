@@ -17,20 +17,8 @@
     //if black, then nextPlayer = red
     //if red, then nextPlayer = black
 
-    $("button").click(function() {
-
-      var columnId = $(this).parent().index();
-      console.log(columnId);
-      $(function () {
-        firebaseRef.set({
-          color: currentColor,
-          column: columnId
-        });
-      });
-      var gameState = game.drop(columnId,currentColor) //Give to the Model guys.
-      console.log(gameState)
-
-      $availableSlots = $(this).parent().children(".empty").length
+    var doSomething = function() {
+      var $availableSlots = $(this).parent().children(".empty").length
       if ($availableSlots > 0){
         $chipPlacement = $(this).parent().children(".empty").last()
         // console.log($(this).parent().children(".empty").length)
@@ -56,6 +44,47 @@
 
       }
       else { console.log("Column is Full!") }
+    }
+    var readFirebase = function() {
+      firebaseRef.on("value", function(snap) {
+        JSON.stringify(snap.val())
+        var datum = snap.val();
+        console.log(datum);
+        console.log(datum.color)
+        console.log(datum.column)
+        var gameState = game.drop(datum.column,datum.color);
+        doSomething();
+      });
+    }
+
+    $("button").click(function() {
+
+      var columnId = $(this).parent().index();
+      // console.log(columnId);
+      var setFirebase = function() {
+        firebaseRef.set({
+          color: currentColor,
+          column: columnId
+        });
+      }
+      setFirebase();
+
+
+      // var readFirebase = function() {
+      //     firebaseRef.on("value", function(snap) {
+      //       JSON.stringify(snap.val())
+      //       var datum = snap.val();
+      //       console.log(datum);
+      //       console.log(datum.color)
+      //       console.log(datum.column)
+
+                          // var gameState = game.drop(datum.column,datum.color) //Give to the Model guys.
+                          // var gameState = game.drop(datum.column,datum.color) //Give to the Model guys.
+                          // console.log(gameState)
+
+
+
+
     })
     $(".win button").click(function() {
       location.reload();
