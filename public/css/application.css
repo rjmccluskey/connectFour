@@ -1,14 +1,34 @@
 body {
   background-image: url('http://images5.alphacoders.com/312/312646.jpg');
   background-size: cover;
+  font-family: 'Hammersmith One', sans-serif;
+  }
+
+.title{
+  min-height: 100px;
+  width: 100%;
+  background-color: black;
+  border-bottom: 4px solid black;
+  z-index:5;
+  margin-bottom: 10px;
+  margin-left: 0;
+  margin-right:0;
+  display:block;
+}
+.title h1{
+  color: white;
+  font-size: 60px;
+  text-align: center;
+  padding-top: 25px;
 }
 
 .board {
-  max-width: 780px;
-  width:100%;
-  margin:0 auto;
-  background-color:yellow;
+  width: 790px;
+  margin: 0 auto;
+  background-color: yellow;
   border: 3px solid black;
+
+  white-space: nowrap;
 }
 #column {
   display: inline-block;
