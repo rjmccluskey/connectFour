@@ -13,6 +13,7 @@ body {
   margin-bottom: 10px;
   margin-left: 0;
   margin-right:0;
+
   display:block;
 }
 .title h1{
@@ -22,13 +23,44 @@ body {
   padding-top: 25px;
 }
 
+
+.nextChip{
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 5%;
+  height: 200px;
+  width: 200px;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 100px;
+  padding-left: 10px;
+}
+
+.nextChip h4{
+  text-align: center;
+}
+
+.currentPlayer{
+    height: 90px;
+    width: 90px;
+    background-color: black;
+    border: 2px solid black;
+    border-radius: 100%;
+    margin-top: 5px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
 .board {
   width: 790px;
   margin: 0 auto;
   background-color: yellow;
   border: 3px solid black;
-
   white-space: nowrap;
+  display: inline-block;
 }
 #column {
   display: inline-block;
@@ -84,7 +116,7 @@ button {
   width: 490px;
   position: absolute;
   top:10%;
-  margin: 0 14.3%;
+  margin: 17% 10%;
   background-color: #fff;
   border: 10px solid blue;
   display:none;

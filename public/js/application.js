@@ -2,6 +2,11 @@
     var game = new Board()
     var currentColor = "black"
 
+
+
+    $('.currentPlayer').css("background-color", currentColor)
+
+
     var nextColor = function(currentColor){
       if (currentColor == "red")
         return "black"
@@ -44,6 +49,8 @@
 
         currentColor = nextColor(currentColor)
         // console.log(currentColor)
+
+        $('.currentPlayer').css("background-color", currentColor)
 
       }
       else { console.log("Column is Full!") }
